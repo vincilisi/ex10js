@@ -147,3 +147,18 @@ const age =[
 ].sort((a,b) => a.age-b.age);
 console.log(age);
 // per questo esercizio ho concatenato all'array la funzione sort che grazie ad a.age-b.age mi ristampa l'array riodinandolo dal piu' piccolo al piu' grande
+
+// 5. Somma numeri infiniti con currying
+// Crea una funzione che funzioni così:
+// sum(1)(2)(3)(4)(); // 10
+// Ogni chiamata aggiunge un numero, e quando chiami senza argomenti () restituisce la somma.]
+function a(x = 0) {
+  return {
+    somma: (y) => a(x + y),
+    risultato: () => x
+  };
+}
+
+// Esempio:
+const risultato = a().somma(6).somma(7).somma(5).risultato(); // ➝ 18
+console.log(risultato);
