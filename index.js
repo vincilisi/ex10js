@@ -74,8 +74,8 @@ const user ={
     zip: '00100'
           },
 }
-const {name, skills,address} = user;
-console.log(name, skills[1], address.city);
+const {name, skills:[,reactskills], address:{city}} = user;
+console.log(name, reactskills, city);
 // per fare questo esercizio ho destrutturato i valori richiesti e poi in console ho preso, per skills e addres il valore richiesto.
 
 // es4
@@ -105,7 +105,7 @@ console.log(reverseString("Js con es6 è bello ma faticoso"));
 const uarr1 = [1,2,3];
 const uarr2 = [2,3,4,5];
 
-const unico =[new Set([...uarr1, ...uarr2])]
+const unico =[new Set([...uarr1, ...uarr2])].sort((a, b) => a - b);
 console.log(unico);
 // per fare l'esercizio ho creato per prima cosa una costante dove gli ho creato un new set() con dentro [...const1, ...const2] cosi che mi uniscano nella mia nuova costante i 2 array e eliminano i duplicati
 
